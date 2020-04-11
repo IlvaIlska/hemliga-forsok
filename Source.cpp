@@ -13,40 +13,47 @@ string caesarEncrypt4(string a)
 
     while (count < z)
     {
-        int val = byLetter[count];
-        
+        char changeThis = byLetter[count];
+        int val = int(changeThis);
+        int morpher = val;
         if ((val >= 48) && (val <= 57))
         {
-            byLetter[count] += 4;
-                if (val > 57)
+            morpher += 4; 
+            changeThis = char(morpher);
+            byLetter[count] =changeThis;
+                if (morpher > 57)
                 {
-                    byLetter[count]-= 10;
+                    morpher -= 10;
+                    changeThis = char(morpher);
+                    byLetter[count]=changeThis;
                 }
         }
         else if ((val >= 65) && (val <= 90))
         {
-            byLetter[count] +=4;
-                if (val > 90)
+            morpher += 4;
+            changeThis = char(morpher);
+            byLetter[count] = changeThis;
+                if (morpher > 90)
                 {
-                    byLetter[count] -=26;
+                    morpher -= 26;
+                    changeThis = char(morpher);
+                    byLetter[count] = changeThis;
                 }
         }
-        else if (val == 32)
-        {
-            byLetter[count] = 32;
-        }
+ 
         else if ((val >= 97) && (val <= 122))
         {
-            byLetter[count] +=4;
-                if (val > 122)
+            morpher += 4;
+            changeThis = char(morpher);
+            byLetter[count] = changeThis;
+                if (morpher > 122)
                 {
-                    byLetter[count] -= 26;
+                    morpher -= 26;
+                    changeThis = char(morpher);
+                    byLetter[count] = changeThis;
                 }
         }
-        else
-        {
-            byLetter[count] += 10;
-        }
+
 
         ++count;
     }
