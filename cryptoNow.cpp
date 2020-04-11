@@ -6,15 +6,19 @@
 #include<stdio.h>
 using namespace std;
 
-string caesarEncrypt4(string a);
+string caesarEncrypt(string a, int cShifter);
 
 
 int main()
 {
     string meta;
+    int howMuch;
     std::cout << "Enter your phrase: " <<'\n';
-    std::cin >> meta;
-    std::cout << "After the CC4 scramble: " << caesarEncrypt4(meta);
+    getline(cin, meta);
+    cin.ignore();
+    cout << "Enter shift amount: " << '\n';
+    cin >> howMuch; 
+    std::cout << "After the CC scramble: " <<'\n'<< caesarEncrypt(meta, howMuch);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
