@@ -30,7 +30,14 @@ string caesarEncrypt(string a, int cShifter) //bring in string, shift characters
             byLetter[count] =changeThis;
                 if (morpher > 57)//if past asci value for 9, go back to 0
                 {
-                    morpher -= 10;
+                    if (cShifter > 20)
+                    {
+                        morpher -= 10;
+                    }
+                    if (cShifter > 10)
+                    {
+                        morpher -= 10; 
+                    }
                     changeThis = char(morpher);
                     byLetter[count]=changeThis;
                 }

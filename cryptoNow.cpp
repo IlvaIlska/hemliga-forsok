@@ -17,7 +17,13 @@ int main()
     getline(cin, meta);
     cin.ignore();
     cout << "Enter shift amount: " << '\n';
-    cin >> howMuch; 
+    cin >> howMuch;
+    howMuch %= 26;
+    if (howMuch < 0)
+    {
+        howMuch += 26;
+    }
+    cout << howMuch << '\n';
     std::cout << "After the CC scramble: " <<'\n'<< caesarEncrypt(meta, howMuch);
 }
 
